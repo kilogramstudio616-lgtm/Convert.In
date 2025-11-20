@@ -1,0 +1,505 @@
+/* Import Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+    /* --- CSS Gradient Placeholder --- */
+    background: linear-gradient(180deg, #f0f4f7 0%, #ffffff 50%, #f0f4f7 100%);
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 200;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.sparkle-icon {
+    font-size: 30px;
+    margin-right: 5px;
+    color: #007bff;
+}
+
+/* Navigasi */
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease-in-out;
+}
+
+/* --- Efek Garis Animasi (Underline) --- */
+.main-nav .nav-item.special-underline::before,
+.main-nav .nav-item.special-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #007bff;
+    transition: transform 0.4s ease-out;
+}
+
+.main-nav .nav-item.special-underline::before {
+    left: 0;
+    transform: translateX(-100%) scaleX(0);
+    transform-origin: left;
+}
+
+.main-nav .nav-item.special-underline::after {
+    right: 0;
+    transform: translateX(100%) scaleX(0);
+    transform-origin: right;
+}
+
+.main-nav .nav-item.special-underline:hover::before {
+    transform: translateX(0) scaleX(0.5);
+}
+
+.main-nav .nav-item.special-underline:hover::after {
+    transform: translateX(0) scaleX(0.5);
+}
+
+/* --- Gaya untuk Navigasi aktif (ketika slide menu terbuka) --- */
+.main-nav a.nav-active-blue {
+    color: #007bff !important;
+}
+
+.main-nav a.nav-active-blue:hover .nav-icon {
+    transform: scale(1.15) rotate(5deg);
+    color: #007bff;
+}
+
+.main-nav a.nav-active-blue.special-underline::before {
+    transform: translateX(0) scaleX(0.5);
+}
+
+.main-nav a.nav-active-blue.special-underline::after {
+    transform: translateX(0) scaleX(0.5);
+}
+
+.main-nav a.nav-active-blue .nav-icon {
+    color: #007bff;
+}
+
+/* Gaya Ikon */
+.main-nav .nav-icon {
+    margin-right: 6px;
+    font-size: 18px;
+    display: inline-block;
+    transition: transform 0.3s ease-out, color 0.3s ease-out;
+}
+
+/* Efek Hover Fun (pada Tujuan dan Tentang) */
+.main-nav .nav-item:hover .nav-icon {
+    transform: scale(1.15) rotate(5deg);
+    color: #007bff;
+}
+
+/* Ikon Home juga mendapat efek hover (walaupun aktif) */
+.main-nav a.active .nav-icon {
+    color: black;
+}
+
+.main-nav a.active:hover .nav-icon {
+    transform: scale(1.1);
+    color: #007bff;
+}
+
+
+/* --- Profile Admin Styling --- */
+.profile-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: background-color 0.2s; 
+}
+
+.profile-container:hover {
+    background-color: #f0f0f0;
+}
+
+.profile-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    background-color: #007bff;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.profile-name {
+    font-weight: 600;
+}
+
+/* Profile Dropdown (Slide Down) */
+.profile-dropdown {
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    z-index: 150;
+    
+    /* Efek Slide Down Transisi */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px); 
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s;
+}
+
+.profile-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    /* Hapus translateY() dan translateX() */
+    transform: translateY(0); 
+}
+
+.profile-dropdown p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.profile-dropdown .motivation {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    font-style: italic;
+    border-left: 3px solid #007bff;
+}
+
+/* --- Home Page Content Styling --- */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.headline-section {
+    padding: 80px 0 60px;
+}
+
+.headline-section h1 {
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    /* Transisi interaktif pada headline saat di-hover */
+    transition: color 0.3s;
+}
+
+.headline-section h1:hover {
+    color: #007bff;
+}
+
+.headline-section .highlight {
+    background-color: #ffeb3b;
+    padding: 0 15px;
+    line-height: 1.2;
+    box-decoration-break: clone;
+    /* Transisi interaktif pada highlight */
+    transition: background-color 0.3s;
+}
+
+.headline-section .highlight:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.headline-section p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.action-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Efek membesar saat hover */
+}
+
+/* Interactive Icons Placeholder (meniru gambar Sparkline) */
+.interactive-icons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 50px;
+}
+
+.icon-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    transform: rotate(45deg); /* Efek diamond seperti di gambar */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+}
+
+.icon-box:hover {
+    transform: rotate(45deg) scale(1.1); /* Efek membesar saat hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.icon-pink {
+    background-color: #ff69b4;
+}
+
+.icon-yellow {
+    background-color: #ffd700;
+}
+
+.icon-blue {
+    background-color: #00bfff;
+}
+
+.icon-red {
+    background-color: #ff4500;
+}
+
+
+/* Slide-out Menus */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out;
+}
+
+.left-menu {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.right-menu {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.slide-menu.open {
+    transform: translateX(0);
+}
+
+.slide-menu h2 {
+    color: #007bff;
+    border-bottom: 2px solid #ffeb3b;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #666;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* ======================================= */
+/* 🚀 Efek Transisi Awal Halaman (Smooth Load) */
+/* ======================================= */
+
+/* Sembunyikan semua elemen utama saat loading */
+.header,
+.headline-section,
+.interactive-icons {
+    opacity: 0;
+    /* Gunakan transisi untuk kemunculan smooth */
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 1. Efek Slide-up untuk semua elemen */
+.header {
+    transform: translateY(-30px);
+}
+
+.headline-section {
+    transform: translateY(30px);
+}
+
+.interactive-icons {
+    transform: translateY(50px);
+}
+
+
+/* Kelas 'loaded' yang akan ditambahkan oleh JavaScript */
+.loaded .header,
+.loaded .headline-section,
+.loaded .interactive-icons {
+    opacity: 1;
+    transform: translateY(0); /* Pindah ke posisi normal */
+}
+
+/* 2. Mengatur delay agar elemen muncul secara berurutan */
+.headline-section {
+    transition-delay: 0.3s;
+}
+
+.interactive-icons {
+    transition-delay: 0.6s;
+}
+
+/* ========================================= */
+/* 📱 MEDIA QUERIES (RESPONSIVITAS MOBILE) */
+/* ========================================= */
+/* Targetting layar hingga 767px (Umumnya Mobile Portrait) */
+@media (max-width: 767px) {
+
+    .header {
+        /* Padding lebih kecil di mobile */
+        padding: 30px 20px;
+    }
+
+    /* Sembunyikan Navigasi Utama */
+    .main-nav {
+        display: block; /* Sembunyikan Navigasi di Mobile */
+    }
+
+    /* Sembunyikan Nama di Profile */
+    .profile-name {
+        display: none;
+    }
+
+    .profile-container {
+        padding: 5px;
+    }
+
+    .profile-img {
+        margin-right: 0;
+    }
+    
+    .logo {
+        /* Tengah di mobile */
+        margin-right: auto; 
+        margin-left: 20px; /* Jaga jarak dari kiri */
+    }
+
+    .profile-dropdown {
+        
+        margin-top: 10px;/* Posisikan dropdown di bawah ikon, lebar hampir penuh */
+        right: 0;
+        left: auto;
+        width: 280px; /* Tetap beri lebar yang layak */
+        top: 100%; /* Posisikan di bawah ikon */
+        transform: translateX(0); /* Hapus transform di mobile */
+    }
+    .profile-dropdown.open {
+        transform: translateY(0) translateX(0); 
+    }
+
+    .main-container {
+        padding: 30px 20px;
+    }
+
+    .headline-section {
+        padding: 40px 0 30px;
+    }
+
+    .headline-section h1 {
+        /* Ukuran font lebih kecil untuk mobile */
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .headline-section p {
+        font-size: 16px;
+        padding: 0;
+    }
+
+    .action-button {
+        /* Tombol full-width untuk mobile */
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .interactive-icons {
+        /* Kurangi ukuran ikon dekoratif dan jarak */
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .icon-box {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Slide-out Menu mengambil lebar lebih penuh di mobile */
+    .slide-menu {
+        width: 85%;
+    }
+}
+
+/* ========================================= */
+/* @media (max-width: 480px) */
+/* Untuk Ponsel Sangat Kecil, kurangi ikon */
+@media (max-width: 480px) {
+    .interactive-icons {
+        gap: 10px;
+    }
+
+    .icon-box {
+        width: 45px;
+        height: 45px;
+    }
+}

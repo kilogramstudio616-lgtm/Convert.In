@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - Konverter Mata Uang Dinamis</title>
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="sparkle-icon">✨</span>
+            <span class="logo-text">Convert.In</span>
+        </div>
+        <nav class="main-nav">
+    <a href="#" class="nav-item special-underline current-page" id="nav-home"><span class="nav-icon">🔍</span> Home</a>  
+    <a href="#" class="nav-item special-underline" id="nav-tujuan"><span class="nav-icon">🧭</span> Tujuan</a>
+    <a href="#" class="nav-item special-underline" id="nav-tentang"><span class="nav-icon">🌟</span> Tentang</a>
+</nav>
+        
+        <div class="profile-container" id="profile-toggle">
+            <img src="star.jpg" alt="Profile DIVINE" class="profile-img">
+            <span class="profile-name">DIVINE</span>
+        </div>
+
+        <div class="profile-dropdown" id="profile-dropdown">
+            <p><strong>Nama Tim:</strong> DIVINE</p>
+            <p><strong>Asal Sekolah:</strong> SMKN 2 MOJOKERTO</p>
+            <p class="motivation">"sesuatu hal yang diusahakan dengan sepenuh hati nanti nya akan menghasilkan sesuatu
+                yang memuaskan hati pula".</p>
+        </div>
+    </header>
+
+    <div class="slide-menu left-menu" id="menu-tujuan">
+        <span class="close-btn" data-menu="tujuan">&times;</span>
+        <h2>Tujuan Proyek</h2>
+        <p>Proyek ini bertujuan untuk mendemonstrasikan kemampuan web modern menggunakan HTML, CSS, dan JavaScript murni dalam membuat antarmuka pengguna yang dinamis dan menarik. Kami menyajikan data kurs mata uang *real-time* melalui integrasi API eksternal.</p>
+    </div>
+
+    <div class="slide-menu right-menu" id="menu-tentang">
+        <span class="close-btn" data-menu="tentang">&times;</span>
+        <h2>Tentang Halaman Ini</h2>
+        <p>Halaman ini terinspirasi dari desain modern. Fungsionalitas konversi diaktifkan melalui *click event* pada kartu, yang memuat form konverter spesifik tanpa memuat ulang halaman. Kami menggunakan `fetch API` untuk mendapatkan kurs.</p>
+    </div>
+
+    <main class="main-container">
+        <div class="headline-section">
+            <h1>Nilai Tukar. Data Anda. <span class="highlight">Akurasi Kami.</span></h1>
+            <p>Pilih salah satu dari 10 mata uang di bawah ini untuk melihat kurs real-time dan konversi instan ke Rupiah (IDR).</p>
+        </div>
+
+        <div class="currency-cards" id="currency-cards">
+            </div>
+
+    </main>
+
+    <div class="overlay" id="overlay"></div>
+
+    <footer class="footer-minimal">
+    <div class="footer-container">
+        
+        <div class="footer-col-brand">
+            <div class="logo">
+                <span class="sparkle-icon">✨</span>
+                <span class="logo-text">Convert.In</span>
+            </div>
+            <p class="tagline">Platform data intelijen nilai mata uang.</p>
+        </div>
+
+        <div class="footer-col-nav">
+            <h3>Menu</h3>
+            <a href="#" class="footer-nav-item">Home</a>
+            <a href="#" class="footer-nav-item" id="footer-tujuan">Tujuan</a>
+            <a href="#" class="footer-nav-item" id="footer-tentang">Tentang</a>
+        </div>
+
+        <div class="footer-col-contact">
+            <h3>Kontak</h3>
+            <a href="https://wa.me/6287805996807"><p><span class="contact-icon">📞</span> +62 878-0599-6807</p></a>
+            <a href="https://wa.me/6285748751299"><p><span class="contact-icon">📞</span> +62 857-4875-1299</p></a>
+        </div>
+
+    </div>
+
+    <div class="footer-copyright">
+        <p>&copy; 2025 Convert.In. | Tim DIVINE. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>

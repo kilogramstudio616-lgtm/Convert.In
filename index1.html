@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkRate - Welcome Page</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="sparkle-icon">✨</span>
+            <span class="logo-text">Convert.In</span>
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="nav-item special-underline current-page" id="nav-home"><span class="nav-icon">🔍</span>
+                Home</a>
+            <a href="#" class="nav-item special-underline" id="nav-tujuan"><span class="nav-icon">🧭</span> Tujuan</a>
+            <a href="#" class="nav-item special-underline" id="nav-tentang"><span class="nav-icon">🌟</span> Tentang</a>
+        </nav>
+
+        <div class="profile-container" id="profile-toggle">
+            <img src="star.jpg" alt="Profile DIVINE" class="profile-img">
+            <span class="profile-name">DIVINE</span>
+            
+            <div class="profile-dropdown" id="profile-dropdown">
+                <p><strong>Nama Tim:</strong> DIVINE</p>
+                <p><strong>Asal Sekolah:</strong> SMKN 2 MOJOKERTO</p>
+                <p class="motivation">"sesuatu hal yang diusahakan dengan sepenuh hati nanti nya akan menghasilkan sesuatu
+                    yang memuaskan hati pula".</p>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="slide-menu left-menu" id="menu-tujuan">
+        <span class="close-btn" data-menu="tujuan">&times;</span>
+        <h2>Tujuan Proyek</h2>
+        <p>Proyek ini bertujuan untuk menciptakan antarmuka pengguna yang dinamis dan modern, menggunakan HTML, CSS, dan
+            JavaScript untuk simulasi konversi mata uang dan desain Home Page yang interaktif.</p>
+    </div>
+
+    <div class="slide-menu right-menu" id="menu-tentang">
+        <span class="close-btn" data-menu="tentang">&times;</span>
+        <h2>Tentang Halaman Ini</h2>
+        <p>Halaman ini dirancang sebagai halaman selamat datang (welcome page), meniru desain *fintech* modern dengan
+            fokus pada transisi yang halus dan responsif. Konten konverter mata uang akan berada di halaman terpisah.
+        </p>
+    </div>
+
+    <main class="main-container">
+        <div class="headline-section">
+            <h1>Find Out The <span class="highlight">Value</span> <br>Of Money With <span
+                    class="highlight">CONVERTIN</span></h1>
+            <p>Take full control with the new data intelligence platform where you can manage all your data with ease
+            </p>
+            <a href="index2.html">
+                <button class="action-button">Explore Demo <span style="margin-left: 5px;">&rarr;</span></button></a>
+        </div>
+
+        <div class="interactive-icons">
+            <div class="icon-box icon-pink"></div>
+            <div class="icon-box icon-yellow"></div>
+            <div class="icon-box icon-blue"></div>
+            <div class="icon-box icon-red"></div>
+        </div>
+
+    </main>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script1.js"></script>
+</body>
+
+</html>
